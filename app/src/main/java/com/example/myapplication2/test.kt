@@ -40,15 +40,11 @@ class test() : ComponentActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.test)
 
-        initUI()
-        btnconn.setOnClickListener (this)
-    }
-
-    fun initUI(){
         btnconn = findViewById(R.id.btnIngreso)
         txtnombre = findViewById(R.id.txtName)
         txtcoreo = findViewById(R.id.txtEmail)
         txtpass = findViewById(R.id.txtPass)
+        btnconn.setOnClickListener (this)
     }
 
     override fun onClick(v: View?) {
