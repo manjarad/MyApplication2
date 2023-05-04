@@ -7,10 +7,16 @@ import javax.crypto.SecretKey
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
+/**
+ * encriptar y desencriptar
+ */
 class Encriptar {
 
     private val key = generateKey()
 
+    /**
+     * encriptar nombre
+     */
     fun encriptarname(nombre:String): ByteArray {
         val plaintext = nombre.toByteArray()
         val cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING")
@@ -19,7 +25,9 @@ class Encriptar {
         val iv: ByteArray = cipher.iv
         return ciphertext + iv
     }
-
+    /**
+     * desencriptar nombre
+     */
     fun desencriptarname(ciphertext: ByteArray): String {
         val iv = ciphertext.takeLast(16).toByteArray() // Extraer el vector de inicialización del cifrado
         val cipher1 = Cipher.getInstance("AES/CBC/PKCS5PADDING")
