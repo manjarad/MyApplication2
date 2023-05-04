@@ -52,7 +52,7 @@ class test() : ComponentActivity(), View.OnClickListener {
             var correo = txtcoreo.getText().toString()
             var pass = txtpass.getText().toString()
 
-            agregarUsuarioBD(name,correo,pass)
+            agregarUsuarioABaseDeDatos(name,correo,pass)
 
             val encriptador = Encriptar()
             val ciphertext = encriptador.encriptarname(name)
@@ -65,7 +65,7 @@ class test() : ComponentActivity(), View.OnClickListener {
     /**
      * se guarda los usuario
      */
-    private fun agregarUsuarioBD(name: String, correo: String, pass: String) {
+    private fun agregarUsuarioABaseDeDatos(name: String, correo: String, pass: String) {
         val stringRequest = object : StringRequest(
                     Method.POST, url,
                     Response.Listener<String> { response ->
