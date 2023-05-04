@@ -29,10 +29,11 @@ lateinit var txtpass : EditText
 var url = "https://marled-developments.000webhostapp.com/test/save.php"
 
 lateinit var requestQueue: RequestQueue
+
+/**
+ * esta es la vista donde se ingresar datos encriptados a la base de datos
+ */
 class test() : ComponentActivity(), View.OnClickListener {
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requestQueue = Volley.newRequestQueue(this)
@@ -83,7 +84,9 @@ class test() : ComponentActivity(), View.OnClickListener {
 
         }
     }
-
+    /**
+     * se guarda los usuario
+     */
     private fun createUser(name: String, correo: String, pass: String) {
         val stringRequest = object : StringRequest(
             Method.POST, url,
